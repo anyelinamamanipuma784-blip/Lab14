@@ -21,6 +21,7 @@ import androidx.glance.text.Text
 class SimpleWidgetContent : GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
+
         provideContent {
             GlanceTheme {
                 MyContent()
@@ -36,15 +37,13 @@ class SimpleWidgetContent : GlanceAppWidget() {
             verticalAlignment = Alignment.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "¿A donde quieres dirigirte?",
-                modifier = GlanceModifier.padding(12.dp)
-            )
+            Text(text = "¿A donde quieres dirigirte?", modifier = GlanceModifier.padding(12.dp))
             Row(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(
                     text = "Página Principal",
                     onClick = actionStartActivity<MainActivity>()
                 )
+
             }
         }
     }

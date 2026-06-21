@@ -5,16 +5,13 @@ plugins {
 
 android {
     namespace = "com.example.lab14"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    // Solución al problema del SDK: Forzamos la compilación limpia en la API 37
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.lab14"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -30,24 +27,19 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-// ... otras configuraciones ...
 
     buildFeatures {
         compose = true
     }
 
-    composeOptions {
-        // Ajusta esta versión según tu versión actual de Kotlin si es necesario
-        kotlinCompilerExtensionVersion = "1.5.14"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlin {
         compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         }
     }
 }
@@ -75,13 +67,6 @@ dependencies {
     // APIs de interoperabilidad con Material 3
     implementation("androidx.glance:glance-material3:1.1.0")
 
-    // APIs de interoperabilidad con Material 2 (Opcional, pero sugerido en tu guía)
+    // APIs de interoperabilidad con Material 2
     implementation("androidx.glance:glance-material:1.1.0")
 }
-
-
-
-
-
-
-
