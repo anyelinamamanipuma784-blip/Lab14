@@ -34,8 +34,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+// ... otras configuraciones ...
+
     buildFeatures {
         compose = true
+    }
+
+    composeOptions {
+        // Ajusta esta versión según tu versión actual de Kotlin si es necesario
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+        }
     }
 }
 
@@ -65,3 +78,10 @@ dependencies {
     // APIs de interoperabilidad con Material 2 (Opcional, pero sugerido en tu guía)
     implementation("androidx.glance:glance-material:1.1.0")
 }
+
+
+
+
+
+
+
