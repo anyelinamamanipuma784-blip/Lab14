@@ -55,4 +55,13 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Soporte para AppWidgets con Glance
+    implementation("androidx.glance:glance-appwidget:1.1.0")
+
+    // APIs de interoperabilidad con Material 3
+    implementation("androidx.glance:glance-material3:1.1.0")
+
+    // APIs de interoperabilidad con Material 2 (Opcional, pero sugerido en tu guía)
+    implementation("androidx.glance:glance-material:1.1.0")
 }
